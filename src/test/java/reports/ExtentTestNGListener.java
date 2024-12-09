@@ -29,11 +29,6 @@ public class ExtentTestNGListener implements ITestListener {
     }
 
     @Override
-    public void onStart(ITestContext context) {
-        // Poate fi folosit pentru setări globale
-    }
-
-    @Override
     public void onFinish(ITestContext context) {
         extent.flush();
     }

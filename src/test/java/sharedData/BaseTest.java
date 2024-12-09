@@ -31,7 +31,6 @@ public class BaseTest {
 
 
     public BaseTest() {
-        // Generate random data once for the entire test class.
         getRandomEmail = CredentialsGenerator.getRandomEmail();
         getRandomPassword = CredentialsGenerator.getRandomPassword();
         getRandomFirstName = CredentialsGenerator.generateRandomFirstName(5);
@@ -41,7 +40,6 @@ public class BaseTest {
     public void prepareEnvironment(){
         ChromeOptions options = new ChromeOptions();
 
-        // Adaugă extensia uBlock Origin
         options.addExtensions(new File("C:\\Users\\radun\\Documents\\CJPALHDLNBPAFIAMEJDNHCPHJBKEIAGM_1_61_2_0.crx"));
 
 
