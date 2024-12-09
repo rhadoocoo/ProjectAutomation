@@ -1,11 +1,11 @@
 package tests;
 
 import org.testng.annotations.Test;
-import sharedData.Hooks;
+import sharedData.BaseTest;
 
-public class CreateAccountTest extends Hooks {
+public class CreateAccountTest extends BaseTest {
     @Test
-    public void createAcceount(){
+    public void createAccount(){
     helperMethods.click(homepageLocators.acceptConsent);
     helperMethods.click(homepageLocators.createAccountButton);
     helperMethods.completeField(createAccountLocators.firstNameField, getRandomFirstName);

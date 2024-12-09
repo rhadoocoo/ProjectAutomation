@@ -1,9 +1,9 @@
 package tests.Filters;
 
 import org.testng.annotations.Test;
-import sharedData.Hooks;
+import sharedData.BaseTest;
 
-public class CategoryFilterTest extends Hooks {
+public class CategoryFilterTest extends BaseTest {
     @Test
     public void categoryFilterTest(){
         helperMethods.click(homepageLocators.acceptConsent);

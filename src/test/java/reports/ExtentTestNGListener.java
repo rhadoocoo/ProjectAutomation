@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import sharedData.Hooks;
+import sharedData.BaseTest;
 
 public class ExtentTestNGListener implements ITestListener {
     private static ExtentReports extent = createInstance("test-output/extent.html");
@@ -55,8 +55,8 @@ public class ExtentTestNGListener implements ITestListener {
         test.get().fail(result.getThrowable());
         // Adaugă capturi de ecran
         Object currentClass = result.getInstance();
-        if (currentClass instanceof Hooks) {
-            WebDriver driver = ((Hooks) currentClass).getDriver();
+        if (currentClass instanceof BaseTest) {
+            WebDriver driver = ((BaseTest) currentClass).getDriver();
             if (driver != null) {
                 try {
                     String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);

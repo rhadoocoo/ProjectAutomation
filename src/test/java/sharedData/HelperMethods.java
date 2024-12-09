@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HelperMethods extends Hooks{
+public class HelperMethods extends BaseTest {
 
 
     public HelperMethods(WebDriver driver) {

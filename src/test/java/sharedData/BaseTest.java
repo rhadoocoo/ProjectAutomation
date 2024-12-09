@@ -10,7 +10,7 @@ import testData.TestData;
 
 import java.io.File;
 
-public class Hooks {
+public class BaseTest {
 
     public WebDriver driver;
     public SoftAssert softAssert;
@@ -30,7 +30,7 @@ public class Hooks {
     public String getRandomLastName;
 
 
-    public Hooks() {
+    public BaseTest() {
         // Generate random data once for the entire test class.
         getRandomEmail = CredentialsGenerator.getRandomEmail();
         getRandomPassword = CredentialsGenerator.getRandomPassword();
