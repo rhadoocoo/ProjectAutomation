@@ -53,7 +53,6 @@ public class ExtentTestNGListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         test.get().fail(result.getThrowable());
-        // Adaugă capturi de ecran
         Object currentClass = result.getInstance();
         if (currentClass instanceof BaseTest) {
             WebDriver driver = ((BaseTest) currentClass).getDriver();
@@ -73,8 +72,4 @@ public class ExtentTestNGListener implements ITestListener {
         test.get().skip(result.getThrowable());
     }
 
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        // Implementare dacă este necesar
-    }
 }
