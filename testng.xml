@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite" verbose="1" parallel="tests" thread-count="1">
+    <listeners>
+        <!-- Listener pentru ExtentReports -->
+        <listener class-name="reports.ExtentTestNGListener"/>
+        <!-- Listener pentru Allure Reports (opțional) -->
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Test">
+        <classes>
+            <class name="tests.Filters.CategoryFilterTest"/>
+            <!-- Adaugă alte clase de test aici -->
+        </classes>
+    </test>
+</suite>
