@@ -5,9 +5,10 @@ import sharedData.BaseTest;
 
 public class CategoryFilterTest extends BaseTest {
     @Test
-    public void categoryFilterTest(){
-        helperMethods.click(homepageLocators.acceptConsent);
-        helperMethods.hoverAndClick(homepageLocators.menDropdown, homepageLocators.dropdownMenTops);
+    public void categoryFilterTest() throws InterruptedException {
+        //helperMethods.click(homepageLocators.acceptConsent);
+        helperMethods.hover(homepageLocators.menDropdown);
+        helperMethods.click(homepageLocators.dropdownMenTops);
         softAssert.assertTrue(menTopProducts.numberOfItemsPreFilterLabel.getText().contains(testData.MEN_TOPS_PREFILTER),"Number of total items mismatch");
         helperMethods.click(general.sidePanelList.get(0));
         helperMethods.click(menTopProducts.categoryJacketsButton);

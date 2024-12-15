@@ -15,6 +15,12 @@ public class General {
     @FindBy(xpath="//div[@class='filter-current']//ol[@class='items']")
     public List<WebElement> activeFiltersList;
 
+    @FindBy(xpath="//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)'][1]")
+    public WebElement addedItemToCartLabel;
+
+    @FindBy(xpath="//span[@class='counter-number']")
+    public WebElement cartQuantityLabel;
+
 
 
     public General (WebDriver driver) {
