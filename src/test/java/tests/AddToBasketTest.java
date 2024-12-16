@@ -21,8 +21,8 @@ public class AddToBasketTest extends BaseTest {
         helperMethods.selectRandomColor(selectedProduct);
         helperMethods.selectRandomSize(selectedProduct);
         helperMethods.addToCart(selectedProduct);
-        wait.until(ExpectedConditions.visibilityOf(general.addedItemToCartLabel));
-        softAssert.assertEquals(general.addedItemToCartLabel.getText(),"You added "+productName+" to your shopping cart.","The product name added does not match");
+        wait.until(ExpectedConditions.visibilityOf(general.notification));
+        softAssert.assertEquals(general.notification.getText(),"You added "+productName+" to your shopping cart.","The product name added does not match");
         softAssert.assertEquals(general.cartQuantityLabel.getText(),"1","Item has not been added to basket");
         softAssert.assertAll();
     }

@@ -22,6 +22,8 @@ public class BaseTest {
     protected TestData testData;
     protected General general;
     protected HelperMethods helperMethods ;
+    protected CustomerLoginPageLocators customerLoginPageLocators;
+    protected WishListPageLocators wishListPageLocators;
 
 
 
@@ -49,21 +51,21 @@ public class BaseTest {
         driver.manage().window().maximize();
 
         softAssert=new SoftAssert();
+        general=new General(driver);
         homepageLocators =new HomepageLocators(driver);
         createAccountLocators= new CreateAccountLocators(driver);
         myAccountLocators=new MyAccountLocators(driver);
         menTopProducts=new MenTopProducts(driver);
         helperMethods=new HelperMethods(getDriver());
         testData=new TestData();
-        general=new General(driver);
+        customerLoginPageLocators=new CustomerLoginPageLocators(driver);
+        wishListPageLocators=new WishListPageLocators(driver);
 
     }
 
     @AfterMethod
     public void clearEnvironment() {
-
         driver.quit();
-
     }
     public WebDriver getDriver() {
         return driver;

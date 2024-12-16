@@ -36,12 +36,18 @@ public class HelperMethods extends BaseTest {
 
     }
 
-    public void click(WebElement button) {
+    public void clickJS(WebElement button) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click()", button);
     }
+    public void click(WebElement button) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element =wait.until(ExpectedConditions.visibilityOf(button));
+        element.click();
+    }
 
     public void completeField(WebElement element, String textToSend) {
+        element.clear();
         element.sendKeys(textToSend);
     }
 
@@ -57,7 +63,7 @@ public class HelperMethods extends BaseTest {
         ));
         int randomColorIndex = new Random().nextInt(colorOptions.size());
         WebElement selectedColor = colorOptions.get(randomColorIndex);
-        click(selectedColor);
+        clickJS(selectedColor);
     }
 
     public void selectRandomSize(WebElement product) {
@@ -72,7 +78,7 @@ public class HelperMethods extends BaseTest {
         ));
         int randomSizeIndex = new Random().nextInt(sizeOptions.size());
         WebElement selectedSize = sizeOptions.get(randomSizeIndex);
-        click(selectedSize);
+        clickJS(selectedSize);
     }
 
     public void addToCart(WebElement product) {
@@ -82,6 +88,15 @@ public class HelperMethods extends BaseTest {
                 product.findElement(By.xpath(".//button[@title='Add to Cart']"))
         ));
         click(addToCartButton);
+    }
+
+    public void addToWishlist(WebElement product) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement addToWishlistButton = wait.until(ExpectedConditions.elementToBeClickable(
+                product.findElement(By.xpath(".//a[@title='Add to Wish List']"))
+        ));
+        click(addToWishlistButton);
     }
 
     public WebElement getRandomElementFromList() {
@@ -98,6 +113,7 @@ public class HelperMethods extends BaseTest {
 
         return productNameElement.getText().trim();
     }
+
 }
 
 

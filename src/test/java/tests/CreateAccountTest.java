@@ -6,7 +6,7 @@ import sharedData.BaseTest;
 public class CreateAccountTest extends BaseTest {
     @Test
     public void createAccount(){
-    helperMethods.click(homepageLocators.acceptConsent);
+    //helperMethods.click(homepageLocators.acceptConsent);
     helperMethods.click(homepageLocators.createAccountButton);
     helperMethods.completeField(createAccountLocators.firstNameField, getRandomFirstName);
     helperMethods.completeField(createAccountLocators.lastNameField,getRandomLastName);
